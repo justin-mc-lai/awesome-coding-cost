@@ -5,6 +5,23 @@ import re
 import yaml
 
 
+def format_name(p):
+    """Format plan name as markdown link if URL exists."""
+    name = p.get('name', '')
+    url = p.get('subscribe_url', '')
+    rank = p.get('tier_rank', 0)
+
+    prefix = ''
+    if rank == 1:
+        prefix = '⭐ '
+    elif rank == 2:
+        prefix = '👍 '
+
+    if url:
+        return f'{prefix}[{name}]({url})'
+    return f'{prefix}{name}'
+
+
 def render_table(plans, category_filter, sub_category_filter=None):
     filtered = [p for p in plans if p.get('category') == category_filter]
     if sub_category_filter:
@@ -12,25 +29,20 @@ def render_table(plans, category_filter, sub_category_filter=None):
     filtered.sort(key=lambda p: p.get('tier_rank', 99))
 
     lines = [
-        '| 套餐 | 价格 | 模型 | TPS | 月度 Token(亿) | 每元 Token 数 | 每亿 Token 成本 | 额度倍率 | 备注 |',
-        '|------|------|------|:--:|:--:|:--:|:--:|:--:|------|',
+        '| 套餐 | 价格 | 模型 | TPS | 月度 Token(亿) | 每元 Token 数 | 每亿 Token 成本 | 备注 |',
+        '|------|------|------|:--:|:--:|:--:|:--:|------|',
     ]
 
     for p in filtered:
-        name = p.get('name', '')
-        if p.get('tier'):
-            name = f'{name} ({p["tier"]})'
+        name = format_name(p)
+        tier_text = p.get('tier', '')
+        if tier_text:
+            name += f' ({tier_text})'
 
         price = p.get('price', '')
         model = p.get('model', '')
         tps = p.get('tps')
         tokens_val = p.get('tokens_per_month')
-
-        rank = p.get('tier_rank', 0)
-        if rank == 1:
-            name = f'⭐ {name}'
-        elif rank == 2:
-            name = f'👍 {name}'
 
         tps_str = str(int(tps)) if tps is not None else '/'
 
@@ -40,34 +52,27 @@ def render_table(plans, category_filter, sub_category_filter=None):
                 price_num = float(m.group())
                 currency = p.get('currency', 'cny')
                 tokens_per_yuan = (float(tokens_val) * 100_000_000) / price_num
-                if tokens_per_yuan >= 10_000:
-                    per_yuan_str = f'{tokens_per_yuan/10_000:.0f}万'
-                else:
-                    per_yuan_str = f'{tokens_per_yuan:.0f}'
+                per_yuan_str = f'{tokens_per_yuan/10_000:.0f}万' if tokens_per_yuan >= 10_000 else f'{tokens_per_yuan:.0f}'
                 cost_per_100m = price_num / float(tokens_val)
                 sym = '¥' if currency == 'cny' else '$'
                 cost_str = f'{sym}{cost_per_100m:.1f}'
-                multiplier_str = 'N/A'
                 tokens_display = str(tokens_val)
             else:
                 per_yuan_str = 'N/A'
                 cost_str = 'N/A'
-                multiplier_str = 'N/A'
                 tokens_display = 'N/A'
         elif price in ('免费', '部分模型限免'):
             per_yuan_str = '免费 🎁'
             cost_str = '免费'
-            multiplier_str = '免费'
             tokens_display = str(tokens_val) if tokens_val else 'N/A'
         else:
             per_yuan_str = 'N/A'
             cost_str = 'N/A'
-            multiplier_str = 'N/A'
             tokens_display = 'N/A'
 
         notes = p.get('notes', '')
         lines.append(
-            f'| {name} | {price} | {model} | {tps_str} | {tokens_display} | {per_yuan_str} | {cost_str} | {multiplier_str} | {notes} |'
+            f'| {name} | {price} | {model} | {tps_str} | {tokens_display} | {per_yuan_str} | {cost_str} | {notes} |'
         )
 
     return '\n'.join(lines)
@@ -80,18 +85,15 @@ def render_api_table(plans, sub_category_filter=None):
     filtered.sort(key=lambda p: p.get('tier_rank', 99))
 
     lines = [
-        '| 模型 | 输入价格 | 输出价格 | 缓存价格 | 上下文 | 备注 |',
-        '|------|:--:|:--:|:--:|:--:|------|',
+        '| 模型 | 输入价格 | 备注 |',
+        '|------|:--:|------|',
     ]
 
     for p in filtered:
-        name = p.get('name', '')
+        name = format_name(p)
         price = p.get('price', '')
-        model = p.get('model', '')
         notes = p.get('notes', '')
-        rank = p.get('tier_rank', 0)
-        prefix = '⭐ ' if rank == 1 else ('👍 ' if rank == 2 else '')
-        lines.append(f'| {prefix}{name} | {price} | - | - | - | {notes} |')
+        lines.append(f'| {name} | {price} | {notes} |')
 
     return '\n'.join(lines)
 
@@ -107,12 +109,10 @@ def main():
         data = yaml.safe_load(f)
     plans = data['plans']
 
-    # Category stats
     cats = {}
     for p in plans:
         c = p.get('category', 'other')
         cats[c] = cats.get(c, 0) + 1
-
     stats = f"共收录 **{len(plans)}** 个套餐：厂商直营 {cats.get('厂商直营',0)} | 聚合中转 {cats.get('聚合中转',0)} | AI IDE {cats.get('AI IDE',0)} | API 按量 {cats.get('API 按量',0)}"
 
     with open(args.template) as f:
