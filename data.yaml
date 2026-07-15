@@ -348,7 +348,7 @@ plans:
   subscribe_url: https://www.codebuddy.cn/docs/ide/Account/pricing
   billing_type: credit_blackbox
   tiers:
-    per_month: 2000基础Credits/月; 2026-09-30前每月加赠2000; 超量包3000 Credits/¥30起
+    per_month: 2000基础Credits/月; 2026-09-30前每月加赠2000; 加量包1000积分/¥50
   throttle: Credits消耗按模型/任务变化; 加赠有截止日期
   hidden_trap: 旧¥59个人专业版口径已过期; 加赠Credits不是永久权益
 - name: Trae Pro
@@ -433,14 +433,14 @@ plans:
   tokens_per_month: null
   tps: 50
   quota_model: 按量
-  notes: "官方API价: 输入$0.14/百万, 输出$0.28/百万; 缓存命中$0.014/百万; 1M上下文"
+  notes: "官方API价: 缓存命中$0.0028/百万, 输入$0.14/百万, 输出$0.28/百万; 1M上下文"
   tier_rank: 1
   subscribe_url: https://platform.deepseek.com
   billing_type: api_metered
   tiers:
     input: $0.14/百万Token
     output: $0.28/百万Token
-    cache_read: $0.014/百万Token
+    cache_read: $0.0028/百万Token
   throttle: TPS 50+; 1M上下文
   hidden_trap: 价格已改为官方美元口径; 缓存命中率决定实际成本
 - name: DeepSeek V4 Pro (API)
@@ -453,11 +453,12 @@ plans:
   tokens_per_month: null
   tps: null
   quota_model: 按量
-  notes: "官方API价: 输入$0.435/百万, 输出$0.87/百万; 推理能力更强; 1M上下文"
+  notes: "官方API价: 缓存命中$0.003625/百万, 输入$0.435/百万, 输出$0.87/百万; 推理能力更强; 1M上下文"
   tier_rank: 2
   subscribe_url: https://platform.deepseek.com
   billing_type: api_metered
   tiers:
+    cache_read: $0.003625/百万Token
     input: $0.435/百万Token
     output: $0.87/百万Token
   throttle: V4 Flash的3倍价; 推理更强

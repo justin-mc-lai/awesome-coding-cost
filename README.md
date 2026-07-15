@@ -43,7 +43,7 @@
 | 👍 [Cursor Pro](https://cursor.com/pricing) | $20/月 | 🎲 Credit黑盒 | - | - | $20 credit($20 API usage) | Usage-based; 超额按量付费 | 1 credit ≠ 固定Token数; 厂商可随时调整credit/Token汇率 |
 | 👍 [Windsurf Pro](https://windsurf.com/pricing) | $20/月 (2周试用) | 🎲 Credit黑盒 | - | 日/周预算, 不公开固定Token | - | SWE-1.5不限量; Premium Model限msg数 | 预算/msg口径不等于固定Token, 一个任务可能消耗多次模型调用 |
 | 👍 [GitHub Copilot Pro](https://github.com/features/copilot/plans) | $10/月 | 🎲 Credit黑盒 | - | - | 300 premium requests | IDE原生集成; 补全+Chat混合 | premium request不是Token; 不同模型/Agent调用消耗口径不同 |
-| 👍 [CodeBuddy 个人标准版](https://www.codebuddy.cn/docs/ide/Account/pricing) | ¥99/月 | 🎲 Credit黑盒 | - | - | 2000基础Credits/月; 2026-09-30前每月加赠2000; 超量包3000 Credits/¥30起 | Credits消耗按模型/任务变化; 加赠有截止日期 | 旧¥59个人专业版口径已过期; 加赠Credits不是永久权益 |
+| 👍 [CodeBuddy 个人标准版](https://www.codebuddy.cn/docs/ide/Account/pricing) | ¥99/月 | 🎲 Credit黑盒 | - | - | 2000基础Credits/月; 2026-09-30前每月加赠2000; 加量包1000积分/¥50 | Credits消耗按模型/任务变化; 加赠有截止日期 | 旧¥59个人专业版口径已过期; 加赠Credits不是永久权益 |
 | 👍 [Trae Pro](https://www.trae.ai/pricing) | $10/月 (7天免费) | 🎲 Credit黑盒 | - | - | $20 Basic + 随机Bonus | 字节出品; 补全不限量 | Bonus随机送, 不承诺额度; 有拿到$130的也有拿$5的 |
 | [Kiro Pro](https://kiro.dev/pricing) | $20/月 (首月免费) | 🎲 Credit黑盒 | - | - | 1000 credits; 超量$0.04/credit | 首月免费; 退出付款页丢失免费资格! | ⚠️退出付款页就丢失免费资格! 不要试 |
 | [Augment Code INDIE](https://www.augmentcode.com/pricing) | $20/月 | 🎲 Credit黑盒 | - | - | 40000 credits | 新玩家, 数据不多 | 40000 credits到底能跑多少agent? 没有实测数据 |
@@ -98,7 +98,7 @@
 | 👍 [Cursor Pro](https://cursor.com/pricing) | $20 | $20 credit($20 API usage) | ❓ 仅标注$额, 无Token数 | 🔴 完全不透明 |
 | 👍 [Windsurf Pro](https://windsurf.com/pricing) | $20 | 日/周预算, 不公开固定Token | ❓ 无公开换算 | 🔴 完全不透明 |
 | 👍 [GitHub Copilot Pro](https://github.com/features/copilot/plans) | $10 | 300 premium requests | ❓ 无公开换算 | 🔴 完全不透明 |
-| 👍 [CodeBuddy 个人标准版](https://www.codebuddy.cn/docs/ide/Account/pricing) | ¥99 | 2000基础Credits/月; 2026-09-30前每月加赠2000; 超量包3000 Credits/¥30起 | ❓ 无公开换算 | 🔴 完全不透明 |
+| 👍 [CodeBuddy 个人标准版](https://www.codebuddy.cn/docs/ide/Account/pricing) | ¥99 | 2000基础Credits/月; 2026-09-30前每月加赠2000; 加量包1000积分/¥50 | ❓ 无公开换算 | 🔴 完全不透明 |
 | 👍 [Trae Pro](https://www.trae.ai/pricing) | $10 | $20 Basic + 随机Bonus | ❓ 无公开换算 | 🔴 完全不透明 |
 | [Kiro Pro](https://kiro.dev/pricing) | $20 | 1000 credits; 超量$0.04/credit | ❓ 无公开换算 | 🔴 完全不透明 |
 | [Augment Code INDIE](https://www.augmentcode.com/pricing) | $20 | 40000 credits | ❓ 无公开换算 | 🔴 完全不透明 |
@@ -236,8 +236,8 @@
 
 | 模型 | 输入价格 | 备注 |
 |------|:--:|------|
-| ⭐ [DeepSeek V4 Flash (API)](https://platform.deepseek.com) | $0.14/百万输入Token | 官方API价: 输入$0.14/百万, 输出$0.28/百万; 缓存命中$0.014/百万; 1M上下文 |
-| 👍 [DeepSeek V4 Pro (API)](https://platform.deepseek.com) | $0.435/百万输入Token | 官方API价: 输入$0.435/百万, 输出$0.87/百万; 推理能力更强; 1M上下文 |
+| ⭐ [DeepSeek V4 Flash (API)](https://platform.deepseek.com) | $0.14/百万输入Token | 官方API价: 缓存命中$0.0028/百万, 输入$0.14/百万, 输出$0.28/百万; 1M上下文 |
+| 👍 [DeepSeek V4 Pro (API)](https://platform.deepseek.com) | $0.435/百万输入Token | 官方API价: 缓存命中$0.003625/百万, 输入$0.435/百万, 输出$0.87/百万; 推理能力更强; 1M上下文 |
 | 👍 [Kimi K2.7 Code (API)](https://platform.kimi.ai) | $0.95/百万输入Token | 官方API价: 输入$0.95/百万, 输出$4/百万, 缓存命中$0.19/百万; 适合代码任务 |
 | 👍 [GLM 5.1 (API)](https://open.bigmodel.cn) | ¥10/百万输入Token | 198K 上下文; SWE-Bench Pro SOTA; 性价比好 |
 
