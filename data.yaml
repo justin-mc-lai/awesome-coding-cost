@@ -352,14 +352,14 @@ plans:
   tokens_per_month: null
   tps: null
   quota_model: 2000 Credits/月
-  notes: 阿里出品; 限时加赠 2000 Credits; 国内 IDE 首选
+  notes: 腾讯出品; 限时加赠 2000 Credits; 国内 IDE 首选
   tier_rank: 2
   subscribe_url: https://www.codebuddy.cn/pricing
   billing_type: credit_blackbox
   tiers:
     per_month: 2000 Credits(含体验500); 限时加赠2000
-  throttle: 阿里出品; 国产IDE首选
-  hidden_trap: 加赠2000有效期仅1个月; 赠费用完恢复2000
+  throttle: 腾讯出品; 国产IDE首选
+  hidden_trap: 加赠2000有效期仅1月, 赠费用完恢复2000
 - name: Trae Pro
   tier: $10/月 (7天免费)
   price: $10
