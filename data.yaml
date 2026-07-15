@@ -13,6 +13,13 @@ plans:
   notes: 2026.7 最新模型 Fable 5; 5h刷新359次/3966万Token; 周额度+50%; 倍率63.6碾压全场; 429频繁
   tier_rank: 1
   subscribe_url: https://claude.ai/upgrade
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 359次/3966万Token
+    per_week: 3590次/3.97亿(2026.5-7 +50%)
+    per_month: 14360次/15.88亿
+  throttle: 429频繁; 实际可用额度远低于理论值; 高峰期尤其严重
+  hidden_trap: 倍率63.6是名义值, 实际429后可用额度≈1/3
 - name: ChatGPT Plus
   tier: $20/月
   price: $20
@@ -26,6 +33,13 @@ plans:
   notes: GPT-5.6-Sol 最新旗舰; 45-225次/5h; 周2190次/1.54亿; 倍率21.8; 限流比Claude宽松
   tier_rank: 1
   subscribe_url: https://chatgpt.com/pricing
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 45-225次 Local Messages
+    per_week: 2190次/1.54亿
+    per_month: 8760次/6.16亿
+  throttle: 限流比Claude宽松; 但Local Messages定义不透明
+  hidden_trap: Local Messages定义模糊, Agent模式 vs Chat模式消耗不同
 - name: Kimi Code Allegretto
   tier: ¥159-199/月
   price: ¥199
@@ -39,6 +53,13 @@ plans:
   notes: K2.7 最新模型; 新会员体系¥159(年付)/¥199(月付); API不限速(多agent并发不429); 多模态; SWE-bench Verified 80.2%
   tier_rank: 1
   subscribe_url: https://www.kimi.com/membership/pricing
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 刷新1307次/6500万Token
+    per_week: 9073次/3.57亿
+    per_month: 36292次/14.28亿
+  throttle: API不限速!!! 多agent并发不弹429; Kimi Code自研CLI偶有429; TPS 27.98
+  hidden_trap: K2.7升级后偶尔死循环; 149/199新会员体系权益拆分(Code权益独立购买)
 - name: Kimi Code Andante
   tier: ¥39-49/月
   price: ¥49
@@ -52,6 +73,13 @@ plans:
   notes: Allegretto 1/20 额度; ¥49 毫无性价比
   tier_rank: 3
   subscribe_url: https://www.kimi.com/membership/pricing
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 刷新359次/1500万Token
+    per_week: 639次/2100万
+    per_month: 2556次/8400万
+  throttle: Allegretto 1/20额度; ¥49毫无性价比
+  hidden_trap: 这档位的Token量跑几个agent就干, 仅适合体验到门外
 - name: GLM Coding Plan Pro
   tier: ¥149/月
   price: ¥149
@@ -65,6 +93,13 @@ plans:
   notes: 代码能力国内最强; 不支持多模态; 高峰期(14-18)3倍额度; 算力紧缺需抢购; 2026年已涨3次价
   tier_rank: 2
   subscribe_url: https://open.bigmodel.cn/glm-coding
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 400次 prompt
+    per_week: 2000次
+    per_month: 8000次/6.4亿
+  throttle: 高峰期14-18点3倍额度消耗!!! 每日10:00限量释放; Max秒售罄; 2026年已涨3次价
+  hidden_trap: 高峰期3倍扣+每日限量的双重暴击, 下午干活≈1/3额度; 海外版涨价近翻倍
 - name: GLM Coding Plan Lite
   tier: ¥49/月
   price: ¥49
@@ -78,6 +113,13 @@ plans:
   notes: Pro 1/5 额度; 5h仅80次; 高峰期3倍消耗; 毫无性价比
   tier_rank: 3
   subscribe_url: https://open.bigmodel.cn/glm-coding
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 80次
+    per_week: 400次
+    per_month: 1600次/1.28亿
+  throttle: 高峰期3倍消耗; 5h仅80次, 两个复杂任务就见底
+  hidden_trap: ¥49但5h/80次=跑两次重agent就等刷新, 性价比倒数第1
 - name: 火山方舟 Coding Plan Lite
   tier: ¥40/月
   price: ¥40
@@ -91,6 +133,12 @@ plans:
   notes: 每日00:00限量释放; TPS 86.6 最快; 倍率15.18; 国内唯一原生支持Codex Responses API
   tier_rank: 2
   subscribe_url: https://www.volcengine.com/activity/codingplan
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 148次/1000万Token
+    per_month: 6275次/3.2亿
+  throttle: 每日00:00限量释放库存, 售完即止, 需抢
+  hidden_trap: 抢不到就当月白等; TPS 86.6最快但没库存也没用
 - name: 阿里云 Coding Plan Lite
   tier: ¥40/月 (已下线)
   price: ¥40
@@ -104,6 +152,13 @@ plans:
   notes: 2026.3.20 停售; 4.13 停续费; 转向Token Plan; Qwen Code免费层1000→100次/天
   tier_rank: 3
   subscribe_url: https://www.aliyun.com/benefit/scene/tokenplan
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 1200次/4000万Token
+    per_week: 9000次
+    per_month: 18000次/6亿
+  throttle: 已停售(2026.3.20停购, 4.13停续费)
+  hidden_trap: 已停售! 转向Token Plan(更贵); Qwen Code免费层1000→100次/天砍到脚踝
 - name: MiniMax Coding Plan Plus
   tier: ¥49/月
   price: ¥49
@@ -117,6 +172,12 @@ plans:
   notes: MIT 开源 10B 激活参数; 周限制已取消, 额度实在; 工具调用准确率76.8%(超Opus4.6); 代码能力偏弱但量最大; 老套餐数据
   tier_rank: 1
   subscribe_url: https://platform.minimaxi.com/subscribe/token-plan
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 1360次/6000万Token(老数据)
+    per_month: 54400次/24亿
+  throttle: 旧套餐已改版, 新套餐数据待确认; 模型代码能力偏弱
+  hidden_trap: 数据是旧的! 已改套餐后实际额度可能变化; 模型只适合量大的场景
 - name: 小米 MiMo Token Plan Pro
   tier: ¥329/月
   price: ¥329
@@ -130,6 +191,11 @@ plans:
   notes: 1T MoE, 100万上下文; 性价比极高但有衰减; 多agent并发易429; 稳定性待观察
   tier_rank: 3
   subscribe_url: https://platform.xiaomimimo.com/#/token-plan
+  billing_type: monthly_quota
+  tiers:
+    per_month: 380亿 Credits/月, ¥329
+  throttle: 多agent并发易429; 模型稳定性待观察; 有衰减
+  hidden_trap: 便宜但有衰减; 不兼容Codex Responses API
 - name: OpenCode Go
   tier: $10/月 (首月 $5)
   price: $10
@@ -143,6 +209,12 @@ plans:
   notes: 多模型聚合; 倍率 6; 支持多种 Agent harness
   tier_rank: 1
   subscribe_url: https://opencode.ai/go
+  billing_type: monthly_quota
+  tiers:
+    per_month: $10(首月$5) 无限制
+  throttle: 多模型聚合; 不支持搜索
+  hidden_trap: 单模型深度只有直营22%; 跑Kimi=Kimi直营的1/5额度
+  aggregator_multiplier: 0.22
 - name: Ollama Pro
   tier: $20/月
   price: $20
@@ -156,6 +228,11 @@ plans:
   notes: Free 版 50x; 开源模型为主; 估值为近似值
   tier_rank: 2
   subscribe_url: https://ollama.com/pricing
+  billing_type: gpu_time
+  tiers:
+    per_month: $20 GPU时间计费(不透明)
+  throttle: 开源模型为主; Free版50x
+  hidden_trap: GPU时间计费完全不透明, 用户不知道花$20买到了多少GPU秒
 - name: Fireworks Fire Pass
   tier: $7/周
   price: $7/周
@@ -169,6 +246,11 @@ plans:
   notes: Kimi K2.6 Turbo 无限 Token 调用; 周付模式灵活
   tier_rank: 2
   subscribe_url: https://app.fireworks.ai/fire-pass
+  billing_type: monthly_quota
+  tiers:
+    per_week: $7/周 Kimi K2.6 Turbo无限Token
+  throttle: 周付灵活但仅有Kimi K2.6 Turbo
+  hidden_trap: 仅有一个模型; Fire Pass套餐可能随时终止
 - name: OpenRouter
   tier: 部分模型限免
   price: 免费
@@ -182,6 +264,11 @@ plans:
   notes: 中转聚合平台, 按用量计费; 部分限免模型
   tier_rank: 3
   subscribe_url: https://openrouter.ai
+  billing_type: free_limited
+  tiers:
+    per_day: 50 reqs/day 部分模型限免
+  throttle: 中转聚合; 按量计费; 模型来源和稳定性依赖上游
+  hidden_trap: 限免模型随时可能取消; 付费模型按tokens计费价格不透明
 - name: NVIDIA NIM
   tier: 免费
   price: 免费
@@ -195,6 +282,11 @@ plans:
   notes: 不限量白嫖首选; 速度无保证; 部分模型为量化版; 免费不可持续
   tier_rank: 1
   subscribe_url: https://build.nvidia.com
+  billing_type: free_limited
+  tiers:
+    per_minute: 40 rpm 不限量
+  throttle: 免费但不限速保证; 部分模型为量化版; 首Token延迟高
+  hidden_trap: 免费不可持续! 随时取消/限速; 量化版可能模型质量低于API版
 - name: Cursor Pro
   tier: $20/月
   price: $20
@@ -208,6 +300,11 @@ plans:
   notes: IDE 内集成 Agent; $20 API usage; 倍率 >=1
   tier_rank: 2
   subscribe_url: https://cursor.com/pricing
+  billing_type: credit_blackbox
+  tiers:
+    per_month: $20 credit($20 API usage)
+  throttle: Usage-based; 超额按量付费
+  hidden_trap: 1 credit ≠ 固定Token数; 厂商可随时调整credit/Token汇率
 - name: Windsurf Pro
   tier: $20/月 (2周试用)
   price: $20
@@ -221,6 +318,12 @@ plans:
   notes: 8-101 msg/day; SWE-1.5 不限量; Quota-based 不透明
   tier_rank: 2
   subscribe_url: https://windsurf.com/pricing
+  billing_type: credit_blackbox
+  tiers:
+    per_day: 8-101 msg/day
+    per_week: 日/周预算
+  throttle: SWE-1.5不限量; Premium Model限msg数
+  hidden_trap: msg/day不透明; 一个msg可能消耗多次模型调用
 - name: GitHub Copilot Pro
   tier: $10/月
   price: $10
@@ -234,6 +337,11 @@ plans:
   notes: IDE 原生集成; 补全+Chat; 倍率 1.5
   tier_rank: 2
   subscribe_url: https://github.com/features/copilot/plans
+  billing_type: credit_blackbox
+  tiers:
+    per_month: $15 monthly credits
+  throttle: IDE原生集成; 补全+Chat混合
+  hidden_trap: credits消耗规则不公开; 补全和Chat消耗不同
 - name: CodeBuddy 个人专业版
   tier: ¥59/月
   price: ¥59
@@ -247,6 +355,11 @@ plans:
   notes: 阿里出品; 限时加赠 2000 Credits; 国内 IDE 首选
   tier_rank: 2
   subscribe_url: https://www.codebuddy.cn/pricing
+  billing_type: credit_blackbox
+  tiers:
+    per_month: 2000 Credits(含体验500); 限时加赠2000
+  throttle: 阿里出品; 国产IDE首选
+  hidden_trap: 加赠2000有效期仅1个月; 赠费用完恢复2000
 - name: Trae Pro
   tier: $10/月 (7天免费)
   price: $10
@@ -260,6 +373,11 @@ plans:
   notes: 字节出品; Bonus 随机赠送(有收到$130); 补全不限量
   tier_rank: 2
   subscribe_url: https://www.trae.ai/pricing
+  billing_type: credit_blackbox
+  tiers:
+    per_month: $20 Basic + 随机Bonus
+  throttle: 字节出品; 补全不限量
+  hidden_trap: Bonus随机送, 不承诺额度; 有拿到$130的也有拿$5的
 - name: Kiro Pro
   tier: $20/月 (首月免费)
   price: $20
@@ -273,6 +391,11 @@ plans:
   notes: ⚠️退出付款页丢失免费资格; $0.04/credit 超量
   tier_rank: 3
   subscribe_url: https://kiro.dev/pricing
+  billing_type: credit_blackbox
+  tiers:
+    per_month: 1000 credits; 超量$0.04/credit
+  throttle: 首月免费; 退出付款页丢失免费资格!
+  hidden_trap: ⚠️退出付款页就丢失免费资格! 不要试
 - name: Augment Code INDIE
   tier: $20/月
   price: $20
@@ -286,6 +409,11 @@ plans:
   notes: 倍率 1.25; 较新的玩家
   tier_rank: 3
   subscribe_url: https://www.augmentcode.com/pricing
+  billing_type: credit_blackbox
+  tiers:
+    per_month: 40000 credits
+  throttle: 新玩家, 数据不多
+  hidden_trap: 40000 credits到底能跑多少agent? 没有实测数据
 - name: Zed Pro
   tier: $10/月
   price: $10
@@ -299,6 +427,11 @@ plans:
   notes: 编辑器原生集成; 补全不限; $5/440万Token; 倍率 0.5
   tier_rank: 3
   subscribe_url: https://zed.dev/pricing
+  billing_type: credit_blackbox
+  tiers:
+    per_month: $5 tokens(440万Claude Sonnet 4.6) + usage-based
+  throttle: 编辑器原生; 补全不限
+  hidden_trap: $5/440万Token只是编辑器附加, 主力agent不够用
 - name: DeepSeek V4 Flash (API)
   tier: 按量计费
   price: ¥1/百万输入Token
@@ -312,6 +445,13 @@ plans:
   notes: 性价比最高按量方案; 输出 ¥2/百万; 缓存读 1/100 价格; 1M 上下文
   tier_rank: 1
   subscribe_url: https://platform.deepseek.com
+  billing_type: api_metered
+  tiers:
+    input: ¥1/百万Token
+    output: ¥2/百万Token
+    cache_read: ¥0.01/百万Token(1/100价格!!!)
+  throttle: TPS 50+; 1M上下文
+  hidden_trap: 缓存命中率决定实际成本; system prompt复用可省99%
 - name: DeepSeek V4 Pro (API)
   tier: 按量计费
   price: ¥3/百万输入Token
@@ -325,6 +465,12 @@ plans:
   notes: V4 Flash 的 3 倍价格; 推理能力更强; 1M 上下文
   tier_rank: 2
   subscribe_url: https://platform.deepseek.com
+  billing_type: api_metered
+  tiers:
+    input: ¥3/百万Token
+    output: ¥12/百万Token
+  throttle: V4 Flash的3倍价; 推理更强
+  hidden_trap: 日常coding V4 Flash够用; Pro只有硬核推理才值差价
 - name: Kimi K2.6 (API)
   tier: 按量计费
   price: ¥20/百万输入Token
@@ -338,6 +484,12 @@ plans:
   notes: 支持多模态; 256K 上下文; 价格偏高但质量稳定
   tier_rank: 2
   subscribe_url: https://platform.moonshot.cn
+  billing_type: api_metered
+  tiers:
+    input: ¥20/百万Token
+    output: ¥40/百万Token
+  throttle: 256K上下文; 多模态支持
+  hidden_trap: 价格是国内API最高的; Allegretto包月¥199比API便宜10倍+
 - name: GLM 5.1 (API)
   tier: 按量计费
   price: ¥10/百万输入Token
@@ -351,6 +503,12 @@ plans:
   notes: 198K 上下文; SWE-Bench Pro SOTA; 性价比好
   tier_rank: 2
   subscribe_url: https://open.bigmodel.cn
+  billing_type: api_metered
+  tiers:
+    input: ¥10/百万Token
+    output: ¥20/百万Token
+  throttle: 198K上下文; SWE-bench Pro SOTA
+  hidden_trap: Pro套餐¥149/6.4亿比API便宜10倍, 选套餐别用API
 - name: Claude Opus 4.8 (API)
   tier: 按量计费
   price: $15/百万输入Token
@@ -364,6 +522,14 @@ plans:
   notes: 输出 $75/百万; 昂贵但能力顶级; 缓存写 $3.75 读 $0.30
   tier_rank: 2
   subscribe_url: https://console.anthropic.com
+  billing_type: api_metered
+  tiers:
+    input: $15/百万Token
+    output: $75/百万Token
+    cache_write: $3.75
+    cache_read: $0.30
+  throttle: 输出$75是输入的5倍; agent场景输出Token占比高
+  hidden_trap: Agent场景输出Token通常>输入Token; $75输出价实际成本远超$15输入价
 - name: GPT-5.6-Sol (API)
   tier: 按量计费
   price: $3/百万输入Token
@@ -377,6 +543,12 @@ plans:
   notes: 输出 $12/百万; 性价比远好于 Claude API
   tier_rank: 1
   subscribe_url: https://platform.openai.com
+  billing_type: api_metered
+  tiers:
+    input: $3/百万Token
+    output: $12/百万Token
+  throttle: 性价比远好于Claude API
+  hidden_trap: 和ChatGPT Plus比, 重度使用包月更划算(月$20 vs API月$100+)
 - name: 京东云 Coding Plan
   tier: ¥19.9/月起(首购)
   price: ¥19.9
@@ -390,6 +562,11 @@ plans:
   notes: 首购¥19.9最低价; Pro ¥99.9(90000次/月); 每天10:30开抢; 近50款模型
   tier_rank: 2
   subscribe_url: https://www.jdcloud.com/cn/pages/codingplan
+  billing_type: monthly_quota
+  tiers:
+    per_month: Lite 18000次/月, Pro 90000次/月
+  throttle: 每天10:30开抢; 首购价仅1次
+  hidden_trap: 首购¥19.9后恢复¥40; 近50款模型但每个模型额度分配不透明
 - name: 移动云 Coding Plan
   tier: ¥7.9/月起(首月)
   price: ¥7.9
@@ -403,6 +580,13 @@ plans:
   notes: 运营商首家Coding Plan; 首月¥7.9后¥40; Pro ¥200; 广东另有AI融合套餐
   tier_rank: 3
   subscribe_url: https://ecloud.10086.cn/portal/act/codingplan
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 1200次
+    per_week: 9000次
+    per_month: 18000次
+  throttle: 仅MiniMax M2.5模型
+  hidden_trap: 运营商网络虽稳但模型单一; 首月¥7.9后¥40
 - name: 天翼云 Coding Plan
   tier: ¥49/月起
   price: ¥49
@@ -416,6 +600,13 @@ plans:
   notes: 电信运营商; 与智谱共享模型但额度更低; 每日10:00释放库存
   tier_rank: 3
   subscribe_url: https://ctxirang.ctyun.cn/maas/codingPlan
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: 80次
+    per_week: 400次
+    per_month: 1600次
+  throttle: 与智谱共享模型但额度更低; 每日10:00释放库存
+  hidden_trap: 比智谱Lite同价但额度更低, 买之前先比GLM官网
 - name: 阶跃星辰 Step Plan
   tier: ¥49/月起
   price: ¥49
@@ -429,6 +620,12 @@ plans:
   notes: 全档位高速推理不加价; 用量为同档友商2倍+; 推广期价格; 海外$9.99比国内¥99略便宜
   tier_rank: 2
   subscribe_url: https://platform.stepfun.com/subscribe
+  billing_type: 5h_refresh
+  tiers:
+    per_5h: ~100次(Mini) / ~400次(Plus) / ~1500次(Pro)
+    per_month: 全档位高速推理不加价
+  throttle: 推广期价格, 可能随时调整
+  hidden_trap: 推广期价格不承诺长期; 海外$9.99比国内¥99更便宜
 - name: SuperGrok
   tier: $30/月
   price: $30
@@ -442,6 +639,11 @@ plans:
   notes: xAI出品; Grok 4.5模型; 图文视频生成; Grok Build Agent; X实时搜索; 多Agent并发推理(Contemplating模式)
   tier_rank: 1
   subscribe_url: https://grok.com/supergrok
+  billing_type: monthly_quota
+  tiers:
+    per_month: 月付$30, rate-limited
+  throttle: Grok Build Agent不限速; 图文视频生成有独立限制
+  hidden_trap: 免费层和付费层模型可能不同(Grok 4.5仅付费)
 - name: SuperGrok Heavy
   tier: $300/月
   price: $300
@@ -455,6 +657,11 @@ plans:
   notes: 16个专家模式Agent并行; 最高使用上限; 专属支持+抢先体验; 首3月67%折扣
   tier_rank: 3
   subscribe_url: https://grok.com/supergrok
+  billing_type: monthly_quota
+  tiers:
+    per_month: 16个并发Agent, $300/月
+  throttle: 无公开限流数据
+  hidden_trap: 首3月67%折扣后恢复$300, 注意续费时间
 - name: Muse Spark 1.1 (API)
   tier: 按量计费
   price: $1.25/百万输入Token
@@ -468,3 +675,9 @@ plans:
   notes: Meta首款付费API模型; 输出$4.25/百万; 1M上下文; Thinking/Contemplating双推理模式; 多Agent并行推理; SWE-bench Pro 58.6; MCP Atlas 88.1
   tier_rank: 1
   subscribe_url: https://ai.meta.com/muse
+  billing_type: api_metered
+  tiers:
+    input: $1.25/百万Token
+    output: $4.25/百万Token
+  throttle: Meta首款付费API; 1M上下文; Thinking/Contemplating双模式; MCP Atlas 88.1
+  hidden_trap: Contemplating模式并行agent消耗倍率未公开; 美国区可用
