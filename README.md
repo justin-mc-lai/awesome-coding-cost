@@ -1,25 +1,23 @@
 # 💰 Awesome Coding Cost
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Plans Tracked](https://img.shields.io/badge/plans-29-blue)](README.md)
 [![Updated](https://img.shields.io/badge/updated-2026--07--15-green)](README.md)
 
 > 各大模型/云厂商/聚合商/AI IDE Coding Plan 实际成本对比 — 每元能买多少 Token？
 >
-> 受 [awesome-coding-plan](https://github.com/mahonzhan/awesome-coding-plan) 启发，采纳其 [Issue #24](https://github.com/mahonzhan/awesome-coding-plan/issues/24) 的「每元 Token 数 / 每亿 Token 成本」量化方案，覆盖厂商直营、聚合中转、AI IDE、API 按量四大类。
+> 受 [awesome-coding-plan](https://github.com/mahonzhan/awesome-coding-plan) 启发，覆盖厂商直营、聚合中转、AI IDE、API 按量四大类。
 
 ---
-
 
 > 彻底说透：模型厂商直营 · 聚合中转商 · AI IDE · API 按量计费
 > 
 > 参考 [awesome-coding-plan](https://github.com/mahonzhan/awesome-coding-plan) · Issue [#24 每元 Token 数/每亿 Token 成本](https://github.com/mahonzhan/awesome-coding-plan/issues/24)
 >
-> 共收录 **29** 个套餐：厂商直营 10 | 聚合中转 5 | AI IDE 8 | API 按量 6
+> 共收录 **36** 个套餐：厂商直营 16 | 聚合中转 5 | AI IDE 8 | API 按量 7
 
 ---
 
-## 一、定价模式全景：四种玩法，一张图看懂
+# 定价模式全景：四种玩法，一张图看懂
 
 2026 年的 AI 编码市场，定价模式可以归为四种：
 
@@ -46,6 +44,8 @@
 |------|------|------|:--:|:--:|:--:|:--:|:--:|------|
 | ⭐ Claude Pro ($20/月) | $20 | Claude Opus 4.8 (Claude Code) | / | 15.88 | 7940万 | $1.3 | N/A | 5h 刷新 359 次/3966万 Token; 周额度 +50% (2026.5-7); 倍率 63.6, 碾压全场 |
 | ⭐ ChatGPT Plus ($20/月) | $20 | GPT-5.6-Sol (Codex CLI) | / | 6.16 | 3080万 | $3.2 | N/A | 45-225 Local Messages/5h; 周 2190次/1.54亿; 倍率 21.8 |
+| ⭐ SuperGrok ($30/月) | $30 | Grok 4.5 | / | N/A | N/A | N/A | N/A | xAI出品; Grok 4.5模型; 图文视频生成; Grok Build Agent; X实时搜索; 多Agent并发推理 |
+| SuperGrok Heavy ($300/月) | $300 | Grok 4.5 (最高额度) | / | N/A | N/A | N/A | N/A | 16个专家模式Agent并行; 最高使用上限; 专属支持+抢先体验; 首3月67%折扣 |
 
 #### 深度解读
 
@@ -61,14 +61,18 @@ ChatGPT Plus 的月度额度约为 Claude Pro 的 1/3，但 GPT-5.6-Sol 在 Code
 
 | 套餐 | 价格 | 模型 | TPS | 月度 Token(亿) | 每元 Token 数 | 每亿 Token 成本 | 额度倍率 | 备注 |
 |------|------|------|:--:|:--:|:--:|:--:|:--:|------|
-| ⭐ Kimi Code Allegretto (¥199/月) | ¥199 | Kimi K2.6 | 27 | 14.28 | 718万 | ¥13.9 | N/A | 支持多模态; 送专属龙虾不需抢; K2.6 后 429 频繁 |
-| ⭐ MiniMax Coding Plan Plus (¥49/月) | ¥49 | MiniMax M2.7 | 52 | 24 | 4898万 | ¥2.0 | N/A | 高性价比之王 倍率 88.6; 已改套餐数据为旧版; 模型代码能力偏弱 |
-| 👍 GLM Coding Plan Pro (¥149/月) | ¥149 | GLM 5.1 | 26 | 6.4 | 430万 | ¥23.3 | N/A | 代码能力国内最强; 不支持多模态; 算力紧缺 429 频繁 |
-| 👍 火山方舟 Coding Plan Lite (¥40/月) | ¥40 | 豆包 Seed 2.0 Pro | 86 | 3.2 | 800万 | ¥12.5 | N/A | 需抢库存; 数倍于 Claude Pro 用量; 倍率 15.18 |
+| ⭐ Kimi Code Allegretto (¥199/月) | ¥199 | Kimi K2.6 | 27 | 14.28 | 718万 | ¥13.9 | N/A | 支持多模态; API 无速率限制(多agent并发不429); K2.6 SWE-bench Verified 80.2%; 送龙虾; 429比智谱少但仍有 |
+| ⭐ MiniMax Coding Plan Plus (¥49/月) | ¥49 | MiniMax M2.7 | 52 | 24 | 4898万 | ¥2.0 | N/A | MIT 开源 10B 激活参数; 周限制已取消, 额度实在; 工具调用准确率76.8%(超Opus4.6); 代码能力偏弱但量最大; 老套餐数据 |
+| 👍 GLM Coding Plan Pro (¥149/月) | ¥149 | GLM 5.1 | 26 | 6.4 | 430万 | ¥23.3 | N/A | 代码能力国内最强; 不支持多模态; 高峰期(14-18)3倍额度; 算力紧缺需抢购; 2026年已涨3次价 |
+| 👍 火山方舟 Coding Plan Lite (¥40/月) | ¥40 | 豆包 Seed 2.0 Pro | 86 | 3.2 | 800万 | ¥12.5 | N/A | 每日00:00限量释放; TPS 86.6 最快; 倍率15.18; 国内唯一原生支持Codex Responses API |
+| 👍 京东云 Coding Plan (¥19.9/月起(首购)) | ¥19.9 | DeepSeek/GLM/MiniMax/Qwen3-Coder/Kimi 等 | / | N/A | N/A | N/A | N/A | 首购¥19.9最低价; Pro ¥99.9(90000次/月); 每天10:30开抢; 近50款模型 |
+| 👍 阶跃星辰 Step Plan (¥49/月起) | ¥49 | Step-3.5-Flash (196B/11B激活) | / | N/A | N/A | N/A | N/A | 全档位高速推理不加价; 用量为同档友商2倍+; 推广期价格; 海外$9.99比国内¥99略便宜 |
 | Kimi Code Andante (¥49/月) | ¥49 | Kimi K2.6 | 27 | 0.84 | 171万 | ¥58.3 | N/A | Allegretto 1/20 额度; ¥49 毫无性价比 |
-| GLM Coding Plan Lite (¥49/月) | ¥49 | GLM 5.1 | 26 | 1.28 | 261万 | ¥38.3 | N/A | Pro 的 1/5 额度; ¥49 毫无性价比 |
-| 阿里云 Coding Plan Lite (¥40/月 (已下线)) | ¥40 | Qwen 3.5 Plus | 52 | 6.0 | 1500万 | ¥6.7 | N/A | 已下线; 倍率 19.8 曾是性价比之王; 18000次/月 |
-| 小米 MiMo Token Plan Pro (¥329/月) | ¥329 | MiMo V2.5 Pro | 46 | 38 | 1155万 | ¥8.7 | N/A | 总量最大的国内套餐; 新兴厂商需观察 |
+| GLM Coding Plan Lite (¥49/月) | ¥49 | GLM 5.1 | 26 | 1.28 | 261万 | ¥38.3 | N/A | Pro 1/5 额度; 5h仅80次; 高峰期3倍消耗; 毫无性价比 |
+| 阿里云 Coding Plan Lite (¥40/月 (已下线)) | ¥40 | Qwen 3.5 Plus | 52 | 6.0 | 1500万 | ¥6.7 | N/A | 2026.3.20 停售; 4.13 停续费; 转向Token Plan; Qwen Code免费层1000→100次/天 |
+| 小米 MiMo Token Plan Pro (¥329/月) | ¥329 | MiMo V2.5 Pro | 46 | 38 | 1155万 | ¥8.7 | N/A | 1T MoE, 100万上下文; 性价比极高但有衰减; 多agent并发易429; 稳定性待观察 |
+| 移动云 Coding Plan (¥7.9/月起(首月)) | ¥7.9 | MiniMax M2.5 | / | N/A | N/A | N/A | N/A | 运营商首家Coding Plan; 首月¥7.9后¥40; Pro ¥200; 广东另有AI融合套餐 |
+| 天翼云 Coding Plan (¥49/月起) | ¥49 | GLM-5/5.1/4.5/4.6/4.7 | / | N/A | N/A | N/A | N/A | 电信运营商; 与智谱共享模型但额度更低; 每日10:00释放库存 |
 
 #### 深度解读
 
@@ -167,6 +171,7 @@ Cursor、Windsurf、Copilot、Trae、CodeBuddy —— 这些 AI IDE 的定价有
 | 模型 | 输入价格 | 输出价格 | 缓存价格 | 上下文 | 备注 |
 |------|:--:|:--:|:--:|:--:|------|
 | ⭐ GPT-5.6-Sol (API) | $3/百万输入Token | - | - | - | 输出 $12/百万; 性价比远好于 Claude API |
+| ⭐ Muse Spark 1.1 (API) | $1.25/百万输入Token | - | - | - | Meta首款付费API模型; 输出$4.25/百万; 1M上下文; Thinking/Contemplating双推理模式; 多Agent并行推理; SWE-bench Pro 58.6; MCP Atlas 88.1 |
 | 👍 Claude Opus 4.8 (API) | $15/百万输入Token | - | - | - | 输出 $75/百万; 昂贵但能力顶级; 缓存写 $3.75 读 $0.30 |
 
 ### API 按量 vs 包月：什么时候用哪个？
@@ -235,43 +240,3 @@ NVIDIA NIM 免费不限量，但随时可能取消或限速。Ollama Free 的模
 ---
 
 *数据更新：2026-07-15 · 由 [库拾创作台](https://github.com/kushishow/selfmedia-creator) 分析生成 · 参考 [awesome-coding-plan](https://github.com/mahonzhan/awesome-coding-plan)*
-
----
-
-## 📊 数据说明
-
-### 每元 Token 数 / 每亿 Token 成本
-
-这两个指标来自 [awesome-coding-plan Issue #24](https://github.com/mahonzhan/awesome-coding-plan/issues/24) 的建议：
-
-- **每元 Token 数** = 月度 Token 额度 ÷ 包月价格 → **越大越好**
-- **每亿 Token 成本** = 包月价格 ÷ 月度 Token 额度(亿) → **越小越好**
-
-对于 Credit/请求数计费的套餐（Cursor、Copilot、Trae、CodeBuddy 等），由于厂商不公开 1 credit = 多少 Token，无法计算这两个指标，标注为 N/A。
-
-### 更新频率
-
-每 2-4 周更新一次。如果你发现数据过时或有新套餐上线，欢迎提 Issue 或 PR。
-
----
-
-## 🤝 贡献
-
-1. Fork 本仓库
-2. 修改 `data.yaml` 中的数据
-3. 运行 `python3 scripts/gen.py --data data.yaml --template README.tpl.md --output README.md`
-4. 提交 PR
-
-数据文件格式见 `data.yaml` 中的注释。
-
----
-
-## 📜 协议
-
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — 署名即可自由使用。
-
-数据来源包含 [awesome-coding-plan](https://github.com/mahonzhan/awesome-coding-plan) 的公开数据，遵循其 CC BY 4.0 协议。
-
----
-
-*本仓库由 [库拾创作台](https://github.com/kushishow/selfmedia-creator) 半自动维护 · 微信公众号：Github 库拾*
